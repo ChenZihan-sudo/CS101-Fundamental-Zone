@@ -1,0 +1,150 @@
+---
+# options: https://clang.llvm.org/docs/ClangFormatStyleOptions.html
+
+BasedOnStyle: LLVM
+IndentWidth: 4
+
+---
+Language: Cpp
+
+UseTab: Never
+TabWidth: 4
+
+ColumnLimit: 0
+AccessModifierOffset: -4
+NamespaceIndentation: All
+
+# The maximum number of consecutive empty lines to keep.
+MaxEmptyLinesToKeep: 20
+
+# If true, clang-format adds missing namespace end comments for namespaces and fixes invalid existing ones.
+# This doesn’t affect short namespaces, which are controlled by ShortNamespaceLines.
+FixNamespaceComments: true
+
+# If true, clang-format will attempt to re-flow comments. 
+# That is it will touch a comment and reflow long comments into new lines, 
+# trying to obey the ColumnLimit.
+# ReflowComments: false
+
+# How many spaces are allowed at the start of a line comment.
+SpacesInLineCommentPrefix:
+  Minimum: 1
+  Maximum: -1
+
+# int* ptr;
+PointerAlignment: Left
+
+# int& ref;
+ReferenceAlignment: Left
+
+AlwaysBreakAfterReturnType: None
+
+# If true, spaces will be inserted into {}.
+# void f() { }
+SpaceInEmptyBlock: true
+
+# (int)i;
+SpaceAfterCStyleCast: false
+
+# Controls if and how clang-format will sort #includes.
+SortIncludes: CaseSensitive
+
+BreakBeforeBraces: Custom
+BraceWrapping:
+  # case A:
+  # {
+  # }
+  AfterCaseLabel: true
+
+  # void foo()
+  # {
+  # }
+  AfterFunction: true
+
+  # BraceWrappingAfterControlStatementStyle: Always
+
+  # AfterControlStatement: Always
+
+  # if (foo()) {
+  # }
+  # else {
+  # }
+  BeforeElse: true
+
+  # do {
+  #   foo();
+  # } while (1);
+  BeforeWhile: false
+
+  # Indent the wrapped braces themselves.
+  IndentBraces: false
+
+  # false:
+  # int f()
+  # {}
+  SplitEmptyFunction: false
+
+  AfterEnum: true
+
+  # struct foo
+  # {
+  #   int x;
+  # };
+  AfterStruct: true
+
+# switch (a) {
+#   case 1: x = 1; break;
+#   case 2: return;
+# }
+AllowShortCaseLabelsOnASingleLine: true
+IndentCaseLabels: true
+SpaceBeforeCaseColon: false
+
+InsertNewlineAtEOF: true
+# KeepEmptyLinesAtEOF: true
+
+# RemoveBracesLLVM: false
+
+# Dependent on the value, while (true) { continue; } can be put on a single line.
+AllowShortBlocksOnASingleLine: true
+
+# Allow short enums on a single line.
+AllowShortEnumsOnASingleLine: true
+
+AllowAllArgumentsOnNextLine: true
+AllowAllParametersOfDeclarationOnNextLine: true
+
+# Dependent on the value, int f() { return 0; } can be put on a single line.
+AllowShortFunctionsOnASingleLine: All
+
+# if (a) return;
+AllowShortIfStatementsOnASingleLine: WithoutElse
+
+AllowShortLambdasOnASingleLine: All
+
+# If true, while (true) continue; can be put on a single line.
+AllowShortLoopsOnASingleLine: true
+
+AlignConsecutiveMacros: Consecutive
+
+# struct test demo[] =
+# {
+#     {56,    23, "hello"},
+#     {-1, 93463, "world"},
+#     { 7,     5,    "!!"}
+# };
+AlignArrayOfStructures: Right
+
+AlignConsecutiveBitFields: Consecutive
+
+
+KeepEmptyLinesAtTheStartOfBlocks: true
+
+# If true, no line break before the closing brace. 
+# - Indentation with the continuation indent, not with the block indent.
+Cpp11BracedListStyle: true
+
+# Options for aligning backslashes in escaped newlines.
+AlignEscapedNewlines: Left
+
+---
