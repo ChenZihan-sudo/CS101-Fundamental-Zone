@@ -146,5 +146,3 @@ Cpp11BracedListStyle: true
 
 # Options for aligning backslashes in escaped newlines.
 AlignEscapedNewlines: Left
-
----
