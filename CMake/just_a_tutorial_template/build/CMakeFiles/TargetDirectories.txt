@@ -1,0 +1,3 @@
+/home/catcolia/CS101-Fundamental-Zone/CMake/just_a_tutorial_template/build/CMakeFiles/Demo.dir
+/home/catcolia/CS101-Fundamental-Zone/CMake/just_a_tutorial_template/build/CMakeFiles/edit_cache.dir
+/home/catcolia/CS101-Fundamental-Zone/CMake/just_a_tutorial_template/build/CMakeFiles/rebuild_cache.dir

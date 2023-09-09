@@ -5,9 +5,8 @@ cmake_minimum_required (VERSION 3.0)
 set(CMAKE_C_COMPILER "/bin/clang")
 set(CMAKE_CXX_COMPILER "/bin/clang++")
 
-# 项目信息
+# Project name
 project (ProjectName)
 
-# 指定生成目标
 add_executable(Demo main.cc)
 
