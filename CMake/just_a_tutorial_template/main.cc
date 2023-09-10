@@ -1,9 +1,9 @@
 #include "outer_lib/outer_lib.h"
-#include <iostream>
 #include <cstdlib>
 #include <cstring>
+#include <iostream>
 
-int main()
+extern "C" int main()
 {
   printf("This is a test file.\n");
   outer_function();
