@@ -8,5 +8,6 @@ set(CMAKE_CXX_COMPILER "/bin/clang++")
 # Project name
 project (ProjectName)
 
-add_executable(Demo main.cc)
-
+add_executable(template_prog 
+               main.cc 
+               outer_lib/outer_lib.c)
