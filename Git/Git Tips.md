@@ -10,6 +10,12 @@ You can change the default initial branch using `git config --global init.defaul
   git config --global user.name "Your Name"
 ```
 
+## Set Proxy for Git
+```bash
+git config --global http.proxy <Your IP Address>
+git config --global https.proxy <Your IP Address>
+```
+
 ## Present modification of .gitignore to branch
 After modify the `.gitignore` to ignore some files/folders
 ```bash
@@ -22,3 +28,4 @@ git add .
 ```bash
 git add . && git commit -m <commit comment> && git push origin <branch>
 ```
+
