@@ -8,12 +8,25 @@ set(CMAKE_C_COMPILER "clang")
 set(CMAKE_CXX_COMPILER "clang++")
 
 # Project name
-project (ProjectName)
+project(ProjectName)
+
+configure_file(
+    "${PROJECT_SOURCE_DIR}/config/config.h.in"
+    "${PROJECT_BINARY_DIR}/config/config.h"
+)
+
+option(USE_OUTER_LIB "Use provided outer lib implementation" ON)
+
+if (USE_OUTER_LIB)
+  include_directories ("${PROJECT_SOURCE_DIR}/outer_lib")
+  set (EXTRA_LIBS ${EXTRA_LIBS} MathFunctions)
+  # Adds a subdirectory to the build.  
+  # The ``source_dir`` specifies the directory in which the source ``CMakeLists.txt`` and code files are located.
+  add_subdirectory(outer_lib)
+endif (USE_OUTER_LIB)
 
 # Find all source file from the dir, stores the list in <variable>
 aux_source_directory(. DIR_SRCS)
-
-add_subdirectory(outer_lib)
 
 # Generate a executable program called <name>
 add_executable(template_prog ${DIR_SRCS})

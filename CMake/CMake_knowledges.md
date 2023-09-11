@@ -32,5 +32,7 @@ add_library(<name> [STATIC | SHARED | MODULE]
 
 ### Linking a library
 Specify libraries or flags to use when linking a given target and/or its dependents. Usage requirements from linked library targets will be propagated. Usage requirements of a target's dependencies affect compilation of its own sources.
-```cmake 
+```cmakes
 target_link_libraries(<target> ... <item>... ...)```
+
+### Custom compile options
