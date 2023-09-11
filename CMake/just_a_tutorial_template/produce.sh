@@ -2,4 +2,7 @@
 
 mkdir build
 cd build
-cmake ..
+cmake -G "Unix Makefiles" ..
+make
+echo "Execute now: "
+./template_prog
