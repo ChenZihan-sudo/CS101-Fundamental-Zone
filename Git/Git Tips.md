@@ -6,14 +6,19 @@ You can change the default initial branch using `git config --global init.defaul
 
 ## Set your default author identity
 ```bash
-  git config --global user.email "you@example.com"
-  git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
 ```
 
-## Set Proxy for Git
+## Set Proxy for your Git
 ```bash
 git config --global http.proxy <Your IP Address>
 git config --global https.proxy <Your IP Address>
+```
+
+## Unset any git config
+```bash
+git config 
 ```
 
 ## Present modification of .gitignore to branch
