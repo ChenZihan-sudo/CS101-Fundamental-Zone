@@ -20,6 +20,22 @@ nano /etc/hosts
 # Format: XXX.XXX.XXX.XXX example.com
 ```
 
+### Use Windows Proxy
+https://zhuanlan.zhihu.com/p/153124468  
+Get DNS Server IP, which point to windows
+**Apply only once**
+```bash
+cat /etc/resolv.conf
+export ALL_PROXY="<DNS Server IP Address>"
+```
+**Persistence the proxy**
+```bash
+sudo su
+echo "host_ip=\$(cat /etc/resolv.conf | grep nameserver | cut -f 2 -d \" \")">>/etc/profile
+echo "export ALL_PROXY=\"<Protocol>://\$host_ip:<your proxy port>\"">>/etc/profile
+source /etc/profile
+```
+
 ### Install Homebrew
 
 ### Install and config Oh-my-posh
@@ -74,7 +90,7 @@ https://blog.csdn.net/xjjxjy_2021/article/details/130875975
 
 ### Usage in Shell
 **Print environment variable values**  
-`echo $<env var name>`  
+`echo $<env var name>`
 Example: `echo $PATH`
 
 **Set a new environment variable**  
