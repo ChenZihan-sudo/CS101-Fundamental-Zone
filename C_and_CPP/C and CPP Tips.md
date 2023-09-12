@@ -2,7 +2,7 @@
 
 ## Compile with both C and CPP Files
 **Why use extern "C"?**  
-They have different symbol system.  
+C and CPP have different symbols system.  
 https://blog.csdn.net/xingqingly/article/details/107530831
 
 ## Forward declaration
