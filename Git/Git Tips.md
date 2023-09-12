@@ -75,6 +75,11 @@ git add .
 git add . && git commit -m <commit comment> && git push origin <branch>
 ```
 
+### Delete remote branch
+```bash  
+git push origin --delete MdAdd
+```
+
 ## Sub Commands
 ```bash
 git show-branch
