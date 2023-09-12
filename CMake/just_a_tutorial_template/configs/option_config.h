@@ -1,1 +1,1 @@
-/* #undef USE_OUTER_LIB */
+#define USE_OUTER_LIB

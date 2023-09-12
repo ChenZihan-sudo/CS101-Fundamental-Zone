@@ -30,6 +30,25 @@ Adds a subdirectory to the build. The source_dir specifies the directory in whic
 add_subdirectory(source_dir [binary_dir] [EXCLUDE_FROM_ALL] [SYSTEM])
 ```
 
+### Set and output message of variables
+https://stackoverflow.com/questions/29078618/set-syntax-in-cmake
+Set or unset `<variable>` in the current function or directory scope
+```cmake
+set(<variable> <value>... [PARENT_SCOPE])
+message([<mode>] "message text" ...)
+```
+Example: 
+```cmake
+set (VALUE_1 "default value")
+set (VALUE_2 "default value")
+
+set (VALUE_1 "value 1")  # A
+set (VALUE_2 ${VALUE_2} "value 2")  # B
+
+message("value 1:" ${VALUE_1})
+message("value 2:" ${VALUE_2})
+```
+
 ## Custom compile options
 ### Set options
 Provide an option that the user can optionally select.
@@ -65,8 +84,24 @@ add_library(<name> [STATIC | SHARED | MODULE]
 ### Linking a library
 Specify libraries or flags to use when linking a given target and/or its dependents. Usage requirements from linked library targets will be propagated. Usage requirements of a target's dependencies affect compilation of its own sources.
 ```cmakes
-target_link_libraries(<target> ... <item>... ...)```
+target_link_libraries(<target> ... <item>... ...)
+```
 
 ### Custom compile options
 
 # PROJECT_BIN_DIR PROJECT_SOURCE_DIR
+
+
+## Install
+### Customize install rules
+Specify rules to run at install time.
+```cmake
+install(TARGETS <target>... [...])
+install(IMPORTED_RUNTIME_ARTIFACTS <target>... [...])
+install({FILES | PROGRAMS} <file>... [...])
+install(DIRECTORY <dir>... [...])
+install(SCRIPT <file> [...])
+install(CODE <code> [...])
+install(EXPORT <export-name> [...])
+install(RUNTIME_DEPENDENCY_SET <set-name> [...])
+```

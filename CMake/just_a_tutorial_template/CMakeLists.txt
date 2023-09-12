@@ -23,6 +23,7 @@ if(USE_OUTER_LIB)
   # The ``source_dir`` specifies the directory in which the source ``CMakeLists.txt`` and code files are located.
   add_subdirectory(outer_lib)
   set(EXTRA_LIBS ${EXTRA_LIBS} the_outer_lib)
+  message("EXTRA_LIBS:"${EXTRA_LIBS})
 endif(USE_OUTER_LIB)
 
 # Find all source file from the dir, stores the list in <variable>
