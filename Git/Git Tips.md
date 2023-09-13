@@ -38,8 +38,8 @@ git config --unset <name>
 `push.default`
 
 ### git pull
-`git pull`          `git fetch` and `git merge`
-`git pull --rebase` `git fetch` and `git rebase origin main`
+`git pull`          `git fetch` and `git merge`  
+`git pull --rebase` `git fetch` and `git rebase origin main`  
 
 
 ## Advanced command operations
