@@ -1,5 +1,6 @@
 # Git Tips 
-https://learngitbranching.js.org/
+https://learngitbranching.js.org/https://learngitbranching.js.org
+
 ## Configurations
 ### Set your default branch
 Github use `main` as a initial branch, but Git use `master`.
