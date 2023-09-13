@@ -1,5 +1,5 @@
 # Git Tips 
-https://learngitbranching.js.org
+https://learngitbranching.js.org/https://learngitbranching.js.org
 
 ## Configurations
 ### Set your default branch
@@ -36,6 +36,9 @@ Command `git checkout -b <branch>` equal to
 git branch <branch>
 git checkout <branch>
 ```
+
+### git commit
+`git commit --amend`
 
 ### git merge
 
