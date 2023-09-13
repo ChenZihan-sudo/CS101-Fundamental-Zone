@@ -1,5 +1,5 @@
 # Git Tips 
-
+https://learngitbranching.js.org/
 ## Configurations
 ### Set your default branch
 Github use `main` as a initial branch, but Git use `master`.
@@ -35,6 +35,9 @@ Command `git checkout -b <branch>` equal to
 git branch <branch>
 git checkout <branch>
 ```
+
+### git commit
+`git commit --amend`
 
 ### git merge
 
