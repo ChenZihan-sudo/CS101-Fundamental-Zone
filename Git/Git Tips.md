@@ -65,16 +65,17 @@ git checkout <branch>
 ### git rebase
 **git rebase -i**
 
-### git reset
-
-### git revert
+### Undo commit: git reset and git revert
+Command `git reset` let the `HEAD` move up to dismiss the commit, the revoked commit still exist on storage cache.  
+Command `git revert` keep the commit, but create a new commit with the same node as the last commit.
 
 ### git cherry-pick
-
+Apply the changes introduced by some existing commits.  
+Pick some existing commits and commit these under `HEAD`. 
 ### git fetch
-
+Download objects and refs from another repository.
 ### git tag
-
+Add a tag reference in refs/tags/
 ### git describe
 
 ### git bisect
