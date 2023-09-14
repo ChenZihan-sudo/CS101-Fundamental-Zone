@@ -14,7 +14,7 @@ env:
 
 jobs:
   build:
-    name: build unix program
+    name: Build unix program
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
     # See: https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/managing-complex-workflows#using-a-build-matrix
@@ -30,9 +30,10 @@ jobs:
         cd ${{github.workspace}}/CMake/just_a_tutorial_template
         cmake -B ./build -G "Unix Makefiles"
 
-    - name: Build
+    - name: Build and run template prog
       # Build your program with the given configuration
       run: |
+        cd ${{github.workspace}}/CMake/just_a_tutorial_template
         make --directory=build
         ./build/template_prog
 
