@@ -1,5 +1,9 @@
+# Folders
 .vscode
 .DS_Store
 .cache
 build/
 output/
+
+# Files
+a.out
