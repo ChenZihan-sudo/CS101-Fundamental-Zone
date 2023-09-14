@@ -8,9 +8,7 @@
 #include <cstring>
 #include <iostream>
 
-int arr[10] = {11, 5, 2, 9, 3, 10, 6, 8, 7, 1};
-
-int arr2[10] = {2, 3, 4, 5, 9, 1, 6, 7, 8, 10};
+int arr[10] = {2, 3, 4, 5, 9, 1, 6, 7, 8, 10};
 
 #define ARR_END_FLAG 0xFFFFFFFF
 void merge_inner(int* arr, size_t arr_size)
@@ -55,15 +53,29 @@ void merge_inner(int* arr, size_t arr_size)
 
 void merge_sorting(int* arr, size_t arr_size)
 {
-  merge_inner(&arr[arr_size / 2], arr_size);
-  merge_sorting();
+  if (arr_size <= 1) return;
+
+  // Sorting left side part
+  merge_sorting(arr, arr_size / 2);
+  // Sorting right side part
+  merge_sorting(&arr[arr_size / 2], arr_size - arr_size / 2);
+
+  // The left side right parts are already sorted.
+  // Hence, we merge these two parts.
+  merge_inner(arr, arr_size);
 }
 
 int main()
 {
   int arr_size = 10;
-  merge_inner(arr2, arr_size);
+  printf("Arr size: %d\n", arr_size);
+  printf("Before: ");
   for (size_t i = 0; i < arr_size; i++) {
-    printf("%3d ", arr2[i]);
+    printf("%3d ", arr[i]);
+  }
+  merge_sorting(arr, arr_size);
+  printf("\nAfter:  ");
+  for (size_t i = 0; i < arr_size; i++) {
+    printf("%3d ", arr[i]);
   }
 }
