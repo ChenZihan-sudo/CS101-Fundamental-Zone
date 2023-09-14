@@ -1,11 +1,14 @@
 # CMake 最低版本号要求
-cmake_minimum_required (VERSION 3.0)
-
-include_directories(/usr/include)
+cmake_minimum_required (VERSION 3.5)
 
 # Specific the cmake compiler
 set(CMAKE_C_COMPILER "clang")
 set(CMAKE_CXX_COMPILER "clang++")
+
+include_directories(/usr/include)
+
+# Set build type <Debug|Release|RelWithDebInfo|MinSizeRel>
+# set(CMAKE_BUILD_TYPE Debug)
 
 # Project name
 project(ProjectName)
