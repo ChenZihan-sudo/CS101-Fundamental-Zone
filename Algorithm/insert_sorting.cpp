@@ -6,7 +6,6 @@
 #include <cstdio>
 #include <cstdlib>
 #include <iostream>
-#include <sys/_types/_size_t.h>
 
 int arr[10] = {9, 2, 3, 6, 7, 1, 8, 10, 24, 4};
 
