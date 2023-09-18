@@ -3,7 +3,8 @@
  * @author ChenZihan (catcolia@qq.com)
  * @copyright Copyright (c) 2023 Catcolia
  * @link https://github.com/ChenZihan-sudo/
- * @note Introduction to Algorithms. Third Edition. Chapter 15.
+ * @note Introduction to Algorithms. Third Edition. 
+ * @note Chapter 15.1. Dynamic Programming. Steel bar cutting.
  * @brief Top-down recursion 自顶而下递归
  */
 
@@ -27,5 +28,5 @@ int CUT_ROD(int length)
 
 int main()
 {
-    printf("%d", CUT_ROD(10));
+    printf("%d", CUT_ROD(5));
 }
