@@ -1,6 +1,20 @@
 # ROS Tips
 http://www.autolabor.com.cn/book/ROSTutorials/
-## File System
+
+## Important hints
+### source after roscore
+For each terminal, every time start up ROS Master must call this to run correctly:
+run `source ./devel/setup.bash`
+
+### Build with compile commands
+When using `clangd` or other frontend language server, add `-DCMAKE_EXPORT_COMPILE_COMMANDS=1` to build to generate `compile_command.json`
+```bash
+catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+```
+## ROS install, build, execute and test steps
+
+
+## ROS file system architecture
 ```text
 WorkSpace --- 自定义的工作空间
 
@@ -35,13 +49,7 @@ WorkSpace --- 自定义的工作空间
         |-- CMakeLists.txt: 编译的基本配置
 ```
 
-## Important
-### source after roscore
-For each terminal, every time start up ROS Master must call this to run correctly:
-run `source ./devel/setup.bash`
-
-
-## Commands
+## ROS Commands
 
 ### roscore
 `roscore [-p <port number>]`
@@ -119,9 +127,19 @@ optional arguments:
 
 ### catkin_make
 
-## Config CMake
+## ROS Communication 
 
-## Communication on different topics
+### Custom data message or data
+**Allowed data type:**  
+- int8, int16, int32, int64 (unsigned trpe included)  
+- float32, float64  
+- string  
+- time, duration  
+- other msg files  
+- variable-length array[] and fixed-length array[C]  
+- Header  
+
+### Topics communication
 ```text
         ROS Master (管理者)  
 
@@ -132,14 +150,8 @@ Listener (订阅者)      Talker (发布者)
 RPC: Remote Procedure Call 
 ![topic communication model](pics/topic%20communication%20model.jpg)
 
-### Custom message
-**Allowed data type:**  
-- int8, int16, int32, int64 (unsigned trpe included)  
-- float32, float64  
-- string  
-- time, duration  
-- other msg files  
-- variable-length array[] and fixed-length array[C]  
-- Header  
+
+### Service communication
+
 
 

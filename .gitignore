@@ -4,6 +4,7 @@
 .cache
 build/
 output/
+devel/
 
 # Files
 a.out
