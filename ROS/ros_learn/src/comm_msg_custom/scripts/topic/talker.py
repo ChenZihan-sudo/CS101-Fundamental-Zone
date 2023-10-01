@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 import rospy
-from topic_conn_test_msg_custom.msg import person
+from comm_msg_custom.msg import person
 
 if __name__ == "__main__":
     rospy.init_node("talker_person_p")

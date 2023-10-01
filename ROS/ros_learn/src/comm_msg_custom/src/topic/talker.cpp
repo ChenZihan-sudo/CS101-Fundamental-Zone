@@ -1,5 +1,5 @@
 #include "ros/ros.h"
-#include "topic_conn_test_msg_custom/person.h"
+#include "comm_msg_custom/person.h"
 
 int main(int argc, char* argv[])
 {
@@ -10,9 +10,9 @@ int main(int argc, char* argv[])
   ros::init(argc, argv, "topic_conn_talker");
   ros::NodeHandle nh;
   ros::Publisher publisher =
-      nh.advertise<topic_conn_test_msg_custom::person>("chat_test", 10);
+      nh.advertise<comm_msg_custom::person>("chat_test", 10);
 
-  topic_conn_test_msg_custom::person person;
+  comm_msg_custom::person person;
   person.age = 50;
   person.height = 180.1;
   person.name = "Catcolia";

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(topic_conn_test_msg_custom)
+project(comm_msg_custom)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -56,11 +56,10 @@ add_message_files(
 )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  add_sums.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -108,7 +107,7 @@ generate_messages(
 # 运行时依赖
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES topic_conn_test_msg_custom
+#  LIBRARIES comm_msg_custom
  CATKIN_DEPENDS roscpp rospy std_msgs message_runtime
 #  DEPENDS system_lib
 )
@@ -126,7 +125,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/topic_conn_test_msg_custom.cpp
+#   src/${PROJECT_NAME}/comm_msg_custom.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -137,8 +136,11 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(talker src/talker.cpp)
-add_executable(listener src/listener.cpp)
+add_executable(talker src/topic/talker.cpp)
+add_executable(listener src/topic/listener.cpp)
+
+add_executable(add_sums_client src/service/add_sums_client.cpp)
+add_executable(add_sums_server src/service/add_sums_server.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -154,6 +156,8 @@ add_executable(listener src/listener.cpp)
 target_link_libraries(talker ${catkin_LIBRARIES})
 target_link_libraries(listener ${catkin_LIBRARIES})
 
+target_link_libraries(add_sums_client ${catkin_LIBRARIES})
+target_link_libraries(add_sums_server ${catkin_LIBRARIES})
 #############
 ## Install ##
 #############
@@ -164,8 +168,8 @@ target_link_libraries(listener ${catkin_LIBRARIES})
 ## Mark executable scripts (Python etc.) for installation
 ## in contrast to setup.py, you can choose the destination
 catkin_install_python(PROGRAMS
-  scripts/listener_py.py
-  scripts/talker_py.py
+  scripts/topic/listener.py
+  scripts/topic/talker.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
 )
 
@@ -202,7 +206,7 @@ catkin_install_python(PROGRAMS
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_topic_conn_test_msg_custom.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_comm_msg_custom.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

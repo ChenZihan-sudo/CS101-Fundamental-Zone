@@ -1,7 +1,7 @@
 #include "ros/ros.h"
-#include "topic_conn_test_msg_custom/person.h"
+#include "comm_msg_custom/person.h"
 
-void resolve_msg(const topic_conn_test_msg_custom::person::ConstPtr &person_p) {
+void resolve_msg(const comm_msg_custom::person::ConstPtr &person_p) {
   ROS_INFO("Name:%s, Age:%d, Height:%.2f", person_p->name.c_str(),
            person_p->age, person_p->height);
 }
@@ -13,7 +13,7 @@ int main(int argc, char *argv[]) {
 
   ros::init(argc, argv, "topic_conn_listener");
   ros::NodeHandle nh;
-  ros::Subscriber sub = nh.subscribe<topic_conn_test_msg_custom::person>(
+  ros::Subscriber sub = nh.subscribe<comm_msg_custom::person>(
       "chat_test", 10, resolve_msg);
 
   ros::spin();

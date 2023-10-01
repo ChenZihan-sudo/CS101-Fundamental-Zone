@@ -11,7 +11,14 @@ When using `clangd` or other frontend language server, add `-DCMAKE_EXPORT_COMPI
 ```bash
 catkin_make -DCMAKE_EXPORT_COMPILE_COMMANDS=1
 ```
+
+### rosdep cannot download default sources list when initialize
+use `sudo -E rosdep init` instead.
+
+
 ## ROS install, build, execute and test steps
+### Build ROS by source code
+https://wiki.ros.org/melodic/Installation/Source
 
 
 ## ROS file system architecture
@@ -152,6 +159,14 @@ RPC: Remote Procedure Call
 
 
 ### Service communication
+**Service communication model**  
+RPC: Remote Procedure Call 
+![service communication model](pics/service%20communication%20model.jpg)
 
+> 1. Client 使用 TCP 与 Server 建立网络连接，并发送请求数据。  
+> 2. Server 接收、解析请求的数据，并产生响应结果返回给 Client。  
+
+- 客户端请求被处理时，需要保证服务器已经启动。
+- 服务端和客户端都可以存在多个。
 
 

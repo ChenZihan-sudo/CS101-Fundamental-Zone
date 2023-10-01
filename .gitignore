@@ -5,6 +5,7 @@
 build/
 output/
 devel/
+__pycache__/
 
 # Files
 a.out
