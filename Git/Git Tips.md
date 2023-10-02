@@ -104,6 +104,12 @@ git rm -r --cached .
 git add .
 ```
 
+### git 使用ssh协议登录
+https://blog.51cto.com/u_12497420/4693947  
+git登录协议:`ssh`和`https`, ssh需要通过`ssh-keygen`生成非对称加密的密钥对，并将公钥配置到github中  
+`git remote -v` 显示当前远程使用的协议  
+切换远程协议：`git remote set-url <远程名(github是origin)> <ssh地址>`  
+
 ### Delete remote branch
 ```bash  
 git push origin --delete MdAdd
@@ -115,3 +121,4 @@ git show-branch
 git show-ref
 git log
 ```
+
