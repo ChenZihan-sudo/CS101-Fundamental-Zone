@@ -134,6 +134,11 @@ optional arguments:
 
 ### catkin_make
 
+### 通信常用命令
+rostopic list 列出所有话题
+rostopic type 获取消息类型
+rosmsg info 获取话题格式
+
 ## ROS Communication 
 
 ### Custom data message or data
@@ -169,4 +174,10 @@ RPC: Remote Procedure Call
 - 客户端请求被处理时，需要保证服务器已经启动。
 - 服务端和客户端都可以存在多个。
 
+### Param communication
+参数服务器  
+Talker 通过 ROS Master 设置参数  
+Listener 通过 ROS Master 获取参数
+http://www.autolabor.com.cn/book/ROSTutorials/di-2-zhang-ros-jia-gou-she-ji/24-can-shu-fu-wu-qi/231-can-shu-fu-wu-qi-li-lun-mo-xing.html  
+http://www.autolabor.com.cn/book/ROSTutorials/assets/03ROS%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B603_%E5%8F%82%E6%95%B0%E6%9C%8D%E5%8A%A1%E5%99%A8.jpg
 
