@@ -19,4 +19,7 @@ https://blog.csdn.net/yilovexing/article/details/80577510
 
 ### Python @staticmethod @classmethod @property 用法及区别
 
+# conda
+**conda set inactivate base environment**  
+conda config --set auto_activate_base false
 
