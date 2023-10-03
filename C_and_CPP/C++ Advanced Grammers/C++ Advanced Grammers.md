@@ -88,6 +88,11 @@ https://www.cnblogs.com/zhuyf87/archive/2012/12/23/2829725.ht
 
 # Others
 
+## static_assert
+https://blog.csdn.net/u011436427/article/details/125400671
+
+## static_cast
+
 ## std::allocator std::allocator_traits
 https://blog.csdn.net/qq_40788199/article/details/126797798
 https://en.cppreference.com/w/cpp/memory/allocator_traits

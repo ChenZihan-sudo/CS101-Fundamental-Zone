@@ -23,7 +23,7 @@ int main(int argc, char* argv[])
     geometry_msgs::PointStamped point_laser;
     point_laser.header.frame_id = "laser";
     point_laser.header.stamp = ros::Time::now();
-point_laser.point
+    point_laser.point
   }
 
   //   ros::ok()
