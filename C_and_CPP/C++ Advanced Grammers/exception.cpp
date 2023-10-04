@@ -10,7 +10,7 @@ struct CException : public exception
   std::string outputs;
   CException(std::string str) : outputs("CException: " + str) { }
 
-  const char* what() const throw()
+  const char* what() const throw() override
   {
     return outputs.c_str();
   }
@@ -29,11 +29,24 @@ struct CException : public exception
 void func_throw_int(int int_val, const char* char_val) throw(int)
 {
   throw int_val;
-  throw char_val; // Unexpected type of throw, handle by std::terminate  
+  throw char_val; // Unexpected type of throw, handle by std::terminate
 }
 
 int main()
 {
+  try {
+    throw std::exception();
+  } catch (const std::exception& e) {
+    std::cout << "Error throw: " << e.what() << std::endl;
+  }
+
+  // Virtual e.what() overrided
+  try {
+    throw CException("exception throwed");
+  } catch (const std::exception& e) {
+    std::cout << "OVERRIDE: " << e.what() << std::endl;
+  }
+
   try {
     throw CException("exception throwed");
 
@@ -48,8 +61,8 @@ int main()
   } catch (int throw_val) {
     std::cout << "Func throw val: " << throw_val << std::endl;
   } catch (const char* c_str) {
-    std::cout << c_str << std::endl; 
+    std::cout << c_str << std::endl;
   }
 
-  while (1) {}
+  while (1) { }
 }
