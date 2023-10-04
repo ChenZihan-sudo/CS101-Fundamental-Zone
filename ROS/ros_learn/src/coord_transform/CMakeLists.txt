@@ -139,6 +139,8 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(static_coord_transform src/static_coord_transform/static_coord_transform.cpp)
 add_executable(static_coord_transform_client src/static_coord_transform/static_coord_transform_client.cpp)
+add_executable(dyna_coord_transform src/dyna_coord_transform/dyna_coord_transform.cpp)
+add_executable(dyna_coord_transform_client src/dyna_coord_transform/dyna_coord_transform_client.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -153,6 +155,8 @@ add_executable(static_coord_transform_client src/static_coord_transform/static_c
 ## Specify libraries to link a library or executable target against
 target_link_libraries(static_coord_transform ${catkin_LIBRARIES})
 target_link_libraries(static_coord_transform_client ${catkin_LIBRARIES})
+target_link_libraries(dyna_coord_transform ${catkin_LIBRARIES})
+target_link_libraries(dyna_coord_transform_client ${catkin_LIBRARIES})
 
 #############
 ## Install ##
