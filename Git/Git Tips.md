@@ -65,6 +65,10 @@ git checkout <branch>
 ### git rebase
 **git rebase -i**
 
+### git submodule
+https://blog.csdn.net/denglin12315/article/details/125932467  
+Add submodule: `git submodule add <url> <sub respority>`
+
 ### Undo commit: git reset and git revert
 Command `git reset` let the `HEAD` move up to dismiss the commit, the revoked commit still exist on storage cache.  
 Command `git revert` keep the commit, but create a new commit with the same node as the last commit.

@@ -1,0 +1,15 @@
+<robot name="mycar">
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <!-- <box size="0.5 0.2 0.1" /> -->
+                <!-- <mesh filename="package://urdf_rviz/meshes/sim_demo/autolabor_mini.stl"></mesh> -->
+            </geometry>
+
+            <origin xyz="0 0 0" rpy="1.57 0 1.57" />
+            <material name="blue">
+                <color rgba="0 0 1.0 0.5" />
+            </material>
+        </visual>
+    </link>
+</robot>

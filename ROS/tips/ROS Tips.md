@@ -1,5 +1,7 @@
 # ROS Tips
 http://www.autolabor.com.cn/book/ROSTutorials/
+https://www.fishros.org.cn/forum/
+https://github.com/zx595306686/sim_demo
 
 ## Important hints
 ### source after roscore
@@ -131,13 +133,19 @@ optional arguments:
                         ROS_DISTRO if defined)
 ```
 
-
 ### catkin_make
 
-### 通信常用命令
-rostopic list 列出所有话题
-rostopic type 获取消息类型
-rosmsg info 获取话题格式
+### 常用命令
+`rostopic list` 列出所有话题  
+`rostopic type` 获取消息类型  
+`rostopic echo <topic>` 打印话题实时数据  
+`rosmsg info` 获取话题格式
+
+### rosbag 
+http://wiki.ros.org/rosbag/Commandline  
+`rosbag record -a -O <目标文件>` 录制文件  
+`rosbag info <bag-files>`  
+`rosbag play <bag-files>`  
 
 ## ROS Communication 
 
@@ -182,3 +190,4 @@ http://www.autolabor.com.cn/book/ROSTutorials/assets/03ROS%E9%80%9A%E4%BF%A1%E6%
 
 ## 进阶
 ### TF坐标变换
+
