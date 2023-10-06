@@ -58,7 +58,7 @@ WorkSpace --- 自定义的工作空间
         |-- CMakeLists.txt: 编译的基本配置
 ```
 
-## ROS Commands
+## 基础 ROS 命令
 
 ### roscore
 `roscore [-p <port number>]`
@@ -147,7 +147,9 @@ http://wiki.ros.org/rosbag/Commandline
 `rosbag info <bag-files>`  
 `rosbag play <bag-files>`  
 
-## ROS Communication 
+### 其他命令
+
+## ROS 通信 
 
 ### Custom data message or data
 **Allowed data type:**  
@@ -190,4 +192,8 @@ http://www.autolabor.com.cn/book/ROSTutorials/assets/03ROS%E9%80%9A%E4%BF%A1%E6%
 
 ## 进阶
 ### TF坐标变换
-
+### urdf
+检查urdf文件语法及格式 `check_urdf <urdf file>`  
+#### 使用xacro生成urdf
+### arbotix
+http://wiki.ros.org/arbotix_python
