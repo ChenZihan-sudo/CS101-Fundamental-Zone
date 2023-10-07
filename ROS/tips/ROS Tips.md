@@ -136,10 +136,13 @@ optional arguments:
 ### catkin_make
 
 ### 常用命令
+`rosnode list` 列出所有节点  
 `rostopic list` 列出所有话题  
-`rostopic type` 获取消息类型  
+`rostopic type <topic>` 获取消息类型  
 `rostopic echo <topic>` 打印话题实时数据  
-`rosmsg info` 获取话题格式
+`rosmsg info <msg>` 获取话题格式  
+`rosnode kill <node>` 杀死某个节点  
+`rosnode cleanup` 清除不可连接的节点（僵尸节点）  
 
 ### rosbag 
 http://wiki.ros.org/rosbag/Commandline  

@@ -6,4 +6,7 @@
     </include>
     <node pkg="gazebo_ros" type="spawn_model" name="model"
         args="-urdf -model car_full_ver -param robot_description" />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher"
+        args="0 0 0 -1.57 0 -1.57 /laser_support /support_depth" />
 </launch>

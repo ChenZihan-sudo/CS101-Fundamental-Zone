@@ -6,4 +6,5 @@
     <xacro:include filename="controller.xacro"/>
     <xacro:include filename="laser_sim.xacro"/>
     <xacro:include filename="camera_sim.xacro" />
+    <xacro:include filename="kinetic_sim.xacro" />
 </robot>

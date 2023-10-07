@@ -11,7 +11,7 @@
                 <geometry>
                     <box size="${camera_length} ${camera_width} ${camera_height}" />
                 </geometry>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 ${PI / 2}" />
                 <material name="laser_support_material">
                     <color rgba="0.3 0.9 0.3 0.9" />
                 </material>
@@ -20,7 +20,7 @@
                 <geometry>
                     <box size="0.03 0.01 ${camera_height}" />
                 </geometry>
-                <origin xyz="0 0 0" rpy="0 0 0" />
+                <origin xyz="0 0 0" rpy="0 0 ${PI / 2}" />
             </collision>
             <xacro:Box_inertial_matrix m="${camera_mass}" l="${camera_length}" w="${camera_width}"
                 h="${camera_height}" />
@@ -31,7 +31,7 @@
             <child link="camera"></child>
             <origin
                 xyz="${base_link_radius - x_offset} 0 ${base_link_length / 2 + camera_height / 2}"
-                rpy="0 0 ${PI / 2}" />
+                rpy="0 0 0" />
         </joint>
 
         <gazebo reference="camera">

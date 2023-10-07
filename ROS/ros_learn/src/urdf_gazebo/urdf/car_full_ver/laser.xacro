@@ -60,11 +60,10 @@
             <xacro:cylinder_inertial_matrix m="${laser_mass}" r="${laser_radius}" h="${laser_length}" />
         </link>
 
-        <joint name="laser_2support_base" type="continuous">
+        <joint name="laser_2support_base" type="fixed">
             <parent link="laser_support"></parent>
             <child link="laser"></child>
             <origin xyz="0 0 ${laser_support_length / 2 + laser_length / 2}" rpy="0 0 0" />
-            <axis xyz="0 0 1" />
         </joint>
 
         <gazebo reference="laser">
