@@ -175,6 +175,12 @@ The Linux source command is a shell command that reads and executes commands fro
 ### sudo apt autoremove
 Remove not required packages
 
-### Admin back to user account
+### 从管理员账户返回到用户账户 Admin back to user account
 Use: `su <user name>`
 
+### /dev/tty* Linux设备串口
+https://blog.csdn.net/qq_38880380/article/details/96436604
+
+### 软链接和硬链接（符号链接）
+https://zhuanlan.zhihu.com/p/442336297
+https://blog.csdn.net/LEON1741/article/details/100136449
