@@ -11,6 +11,7 @@ echo -e  "[interop] \nappendWindowsPath=false">>/etc/wsl.conf
 ```bash
 sudo apt update
 sudo apt install cmake
+sudo apt install build-essential
 ```
 ### Bypass DNS Host Parse
 Why? Bypass DNS server parse to avoid domain name pollution by GFW in China.
@@ -130,3 +131,36 @@ The Linux source command is a shell command that reads and executes commands fro
 
 ## Admin back to user account
 Use: `su <user name>`
+
+## Difference between profile and bashrc
+https://www.linuxprobe.com/diff-bashrcprofile.html
+
+## Linux 字体
+
+### 为当前用户安装字体 Install fonts for current user
+Copy .ttf file into `~/.fonts`
+### 为所有用户安装字体 Install fonts for all users
+Copy .ttf file into `/usr/local/share/fonts/`
+### 加载导入的字体 Load fonts
+`fc-cache -fv`
+### Other commands
+`mkfontscale`
+`mkfontdir`
+
+## 在Ubuntu通过终端开启文件资源管理器 Open File resource manager on Ubuntu
+```bash
+nautilus [path]
+```
+
+## Command: Find
+https://www.linuxcool.com/find
+
+Usage: `find [path...] [expression]`
+
+```bash
+find / -name *.conf     # Find file by name
+find /etc -size +1M     # Find file by size
+find /home -user user   # Find file own to specific user 
+find .                  # List all file, directory
+```
+
