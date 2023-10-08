@@ -136,6 +136,7 @@ optional arguments:
 ### catkin_make
 
 ### 常用命令
+http://www.autolabor.com.cn/book/ROSTutorials/di-2-zhang-ros-jia-gou-she-ji/25-tong-xin-ji-zhi-shi-cao/253-shi-cao-03-fu-wu-diao-yong.html  
 `rosnode list` 列出所有节点  
 `rostopic list` 列出所有话题  
 `rostopic type <topic>` 获取消息类型  
@@ -200,3 +201,18 @@ http://www.autolabor.com.cn/book/ROSTutorials/assets/03ROS%E9%80%9A%E4%BF%A1%E6%
 #### 使用xacro生成urdf
 ### arbotix
 http://wiki.ros.org/arbotix_python
+### 控制 /cmd_vel 消息
+`rosrun rosrun teleop_twist_keyboard teleop_twist_keyboard.py`
+### 发布静态坐标转换
+`static_transform_publisher <x> <y> <z> <qx> <qy> <qz> <qw> <frame_id> <child_frame_id>`  
+**通过launch: **
+`<node pkg="tf2_ros" type="static_transform_publisher" name="<name>" args="<x> <y> <z> <qx> <qy> <qz> <qw> <frame_id> <child_frame_id>" />`
+### launch查找指定包
+`$(find <pack_name>)`
+### launch的param,arg设定
+```xml
+ <param name="<name>" command="<cmds>" />
+ <param name="<name>" default="<default>" value="<value>" />
+ <param textfile="<textfile>"/>
+ <arg name="<name>" value="<value>"> <!-- Use: $(arg <arg_name>) -->
+```
