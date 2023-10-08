@@ -1,9 +1,9 @@
 <launch>
     <param name="use_sim_time" value="true" />
     <node pkg="gmapping" type="slam_gmapping" name="slam_gmapping" output="screen">
-        <remap from="scan" to="scan" /> <!-- 设置雷达话题 -->
-        <param name="base_frame" value="base_footprint" /> <!--底盘坐标系-->
-        <param name="odom_frame" value="odom" /> <!--里程计坐标系-->
+        <remap from="scan" to="scan" />
+        <param name="base_frame" value="base_footprint" /> 
+        <param name="odom_frame" value="odom" /> 
         <param name="map_update_interval" value="5.0" />
         <param name="maxUrange" value="16.0" />
         <param name="sigma" value="0.05" />
