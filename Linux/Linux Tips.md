@@ -48,7 +48,7 @@ chmod +x llvm.sh
 sudo ./llvm.sh <version number> all
 ```
 
-## WSL Commands
+### WSL Commands
 ```powershell
 wsl --install
 wsl --list --online
@@ -57,27 +57,7 @@ wsl --mount <DiskPath>
 wsl --unmount <DiskPath>
 ```
 
-## Switch the software version by update-alternatives
-https://blog.csdn.net/qq_21367897/article/details/89606953
 
-**Add a new alternatives group**
-```bash
-update-alternatives --install <link> <name> <path> <priority>
-# example: sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-16 1
-```
-**Switch the version of software**
-```bash
-update-alternatives --config <name>
-# example: sudo update-alternatives --config clang
-```
-**Remove alternatives group link**
-```bash
-update-alternatives --remove <name> <path>
-# example: sudo update-alternatives --remove clang /usr/bin/clang-14
-```
-
-## sudo apt autoremove
-Remove not required packages
 
 ## Environement Variables
 https://blog.csdn.net/xjjxjy_2021/article/details/130875975
@@ -125,15 +105,83 @@ echo "export PATH=\$PATH:<path>">>/etc/profile
 source /etc/profile
 ```
 
-## Command: Source
+
+## Proxy
+
+### Set DNS Server
+```bash
+nano /etc/resolv.conf
+
+# Add nameserver below (Google DNS Server)
+nameserver 8.8.8.8
+nameserver 8.8.4.4
+
+source /etc/resolv.conf
+```
+
+### Set proxy alias
+```bash
+sudo su
+echo -e "\nalias setproxy=\"export ALL_PROXY=socks5://198.18.0.1:16001 && echo \${ALL_PROXY}\"\n">>~/.bashrc
+echo -e "\nalias unsetproxy=\"unset ALL_PROXY && echo 'proxy unseted.'\"\n">>~/.bashrc
+source ~/.bashrc
+```
+
+
+## Commands
+
+### update-alternatives
+**Switch the software version by update-alternatives**
+https://blog.csdn.net/qq_21367897/article/details/89606953
+
+**Add a new alternatives group**
+```bash
+update-alternatives --install <link> <name> <path> <priority>
+# example: sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-16 1
+```
+**Switch the version of software**
+```bash
+update-alternatives --config <name>
+# example: sudo update-alternatives --config clang
+```
+**Remove alternatives group link**
+```bash
+update-alternatives --remove <name> <path>
+# example: sudo update-alternatives --remove clang /usr/bin/clang-14
+```
+
+### alias
+**Define alias**
+```bash
+# Example: 
+alias print_hello_world="echo 'Hello world!'"
+print_hello_world # Output: Hello world!
+```
+**Show alias**  
+`alias -p`
+
+**Persistence alias by put command into shell configuration file**
+```bash
+sudo su
+echo -e "\n <Some commands>">>~/.bashrc
+echo -e "\n <Some commands>">>~/.bashrc
+source ~/.bashrc
+```
+
+### source
 The Linux source command is a shell command that reads and executes commands from a file in current shell environment. file is typically a shell script, but it can also be any text file containing a series of commands. source command is often used to set environment variables, define functions, and execute initialization scripts.
 
+### find
+https://www.linuxcool.com/find
 
-## Admin back to user account
-Use: `su <user name>`
+Usage: `find [path...] [expression]`
 
-## Difference between profile and bashrc
-https://www.linuxprobe.com/diff-bashrcprofile.html
+```bash
+find / -name *.conf     # Find file by name
+find /etc -size +1M     # Find file by size
+find /home -user user   # Find file own to specific user 
+find .                  # List all file, directory
+```
 
 ## Linux 字体
 
@@ -147,20 +195,24 @@ Copy .ttf file into `/usr/local/share/fonts/`
 `mkfontscale`
 `mkfontdir`
 
-## 在Ubuntu通过终端开启文件资源管理器 Open File resource manager on Ubuntu
+## Other Tips
+### sudo apt autoremove
+Remove not required packages
+
+### Difference between profile and bashrc
+https://www.linuxprobe.com/diff-bashrcprofile.html
+
+### 从管理员账户返回到用户账户 Admin back to user account
+Use: `su <user name>`
+
+### 在Ubuntu通过终端开启文件资源管理器 Open File resource manager on Ubuntu
 ```bash
 nautilus [path]
 ```
 
-## Command: Find
-https://www.linuxcool.com/find
+### /dev/tty* Linux设备串口
+https://blog.csdn.net/qq_38880380/article/details/96436604
 
-Usage: `find [path...] [expression]`
-
-```bash
-find / -name *.conf     # Find file by name
-find /etc -size +1M     # Find file by size
-find /home -user user   # Find file own to specific user 
-find .                  # List all file, directory
-```
-
+### 软链接和硬链接（符号链接）
+https://zhuanlan.zhihu.com/p/442336297
+https://blog.csdn.net/LEON1741/article/details/100136449

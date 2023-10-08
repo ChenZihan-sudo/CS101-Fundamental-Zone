@@ -1,0 +1,6 @@
+<launch>
+    <node pkg="pack_ros_test" type="ros_pack_test" name="hello_world_cpp" output="screen" />
+    <node pkg="pack_ros_test" type="ros_pack_py_test.py" name="hello_world_py" output="screen" />
+    <node pkg="turtlesim" type="turtlesim_node" name="turtle_GUI" />
+    <node pkg="turtlesim" type="turtle_teleop_key" name="turtle_control" />
+</launch>

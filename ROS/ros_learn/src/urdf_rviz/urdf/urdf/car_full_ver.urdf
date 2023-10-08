@@ -1,0 +1,103 @@
+<robot name="car_full_ver">
+    <link name="base_footprint">
+        <visual>
+            <geometry>
+                <sphere radius="0.00001" />
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="0.1" length="0.08" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="base_color">
+                <color rgba="0.5 0 0.5 0.8" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="base_link2base_footprint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 0.055" />
+    </joint>
+
+    <link name="wheelL">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0325" length="0.015" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="wheelL_color">
+                <color rgba="1 1 1 0.95" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="wheelL2base" type="continuous">
+        <parent link="base_link"></parent>
+        <child link="wheelL"></child>
+        <origin xyz="0 0.09925 -0.0225" rpy="1.571 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="wheelR">
+        <visual>
+            <geometry>
+                <cylinder radius="0.0325" length="0.015" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="wheelR_color">
+                <color rgba="1 1 1 0.95" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="wheelR2base" type="continuous">
+        <parent link="base_link"></parent>
+        <child link="wheelR"></child>
+        <origin xyz="0 -0.09925 -0.0225" rpy="1.571 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="uniWheelF">
+        <visual>
+            <geometry>
+                <sphere radius="0.0075"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="uniWheelF_color">
+                <color rgba="1 1 0 0.95" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="uniWheelF2base" type="continuous">
+        <parent link="base_link"></parent>
+        <child link="uniWheelF"></child>
+        <origin xyz="0.08 0 -0.0475" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+    <link name="uniWheelB">
+        <visual>
+            <geometry>
+                <sphere radius="0.0075"/>
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="uniWheelB_color">
+                <color rgba="1 1 0 0.95" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="uniWheelB2base" type="continuous">
+        <parent link="base_link"></parent>
+        <child link="uniWheelB"></child>
+        <origin xyz="-0.08 0 -0.0475" rpy="0 0 0" />
+        <axis xyz="0 0 1" />
+    </joint>
+</robot>

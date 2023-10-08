@@ -1,0 +1,164 @@
+<robot name="car_full_ver" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+    <xacro:property name="PI" value="3.1415926" />
+    <xacro:property name="base_footprint_radius" value="0.0000001" />
+    <xacro:property name="base_link_radius" value="0.1" />
+    <xacro:property name="base_link_length" value="0.08" />
+    <xacro:property name="ground_space" value="0.015" />
+
+    <link name="base_footprint">
+        <visual>
+            <geometry>
+                <sphere radius="${base_footprint_radius}" />
+            </geometry>
+        </visual>
+    </link>
+
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <cylinder radius="${base_link_radius}" length="${base_link_length}" />
+            </geometry>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <material name="base_color">
+                <color rgba="0.5 0 0.5 0.8" />
+            </material>
+        </visual>
+    </link>
+
+    <joint name="base_link2base_footprint" type="fixed">
+        <parent link="base_footprint" />
+        <child link="base_link" />
+        <origin xyz="0 0 ${ground_space + base_link_length / 2}" />
+    </joint>
+
+    <!-- * Template: driver wheel -->
+    <xacro:property name="wheel_radius" value="0.0325" />
+    <xacro:property name="wheel_length" value="0.015" />
+
+    <xacro:macro name="add_wheel" params="name LorR_flag">
+        <link name="wheel_${name}">
+            <visual>
+                <geometry>
+                    <cylinder radius="${wheel_radius}" length="${wheel_length}" />
+                </geometry>
+                <origin xyz="0 0 0" rpy="${PI / 2} 0 0" />
+                <material name="wheel_${name}_color">
+                    <color rgba="1 1 1 0.95" />
+                </material>
+            </visual>
+        </link>
+
+        <joint name="wheel_${name}_2base" type="continuous">
+            <parent link="base_link"></parent>
+            <child link="wheel_${name}"></child>
+            <origin
+                xyz="0 ${LorR_flag * base_link_radius} ${-(ground_space + base_link_length / 2 - wheel_radius)}"
+                rpy="0 0 0" />
+            <axis xyz="0 1 0" />
+        </joint>
+    </xacro:macro>
+
+    <!-- * Template: universal wheel -->
+    <xacro:property name="uni_wheel_radius" value="0.0075" />
+
+    <xacro:macro name="add_uni_wheel" params="name ForB_flag">
+        <link name="uni_wheel_${name}">
+            <visual>
+                <geometry>
+                    <sphere radius="${uni_wheel_radius}" />
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <material name="uni_wheel_${name}_color">
+                    <color rgba="1 1 1 0.95" />
+                </material>
+            </visual>
+        </link>
+
+        <joint name="uniWheel_${name}_2base" type="continuous">
+            <parent link="base_link"></parent>
+            <child link="uni_wheel_${name}"></child>
+            <origin
+                xyz="${ForB_flag * (base_link_radius - uni_wheel_radius)} 0 ${-(base_link_length / 2 + ground_space / 2)}"
+                rpy="0 0 0" />
+            <axis xyz="1 1 1" />
+        </joint>
+    </xacro:macro>
+
+
+    <!-- * Template: Laser -->
+    <xacro:property name="laser_support_radius" value="0.008" />
+    <xacro:property name="laser_support_length" value="0.1" />
+    <xacro:property name="laser_radius" value="0.03" />
+    <xacro:property name="laser_length" value="0.05" />
+
+    <xacro:macro name="add_laser" params="">
+        <link name="laser_support">
+            <visual>
+                <geometry>
+                    <cylinder radius="${laser_support_radius}" length="${laser_support_length}" />
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <material name="laser_support_material">
+                    <color rgba="0.7 0.6 0.7 0.9" />
+                </material>
+            </visual>
+        </link>
+
+        <joint name="laser_support_2base" type="fixed">
+            <parent link="base_link"></parent>
+            <child link="laser_support"></child>
+            <origin xyz="0 0 ${base_link_length / 2 + laser_support_length / 2}" rpy="0 0 0" />
+        </joint>
+
+        <link name="laser">
+            <visual>
+                <geometry>
+                    <cylinder radius="${laser_radius}" length="${laser_length}" />
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <material name="laser_material">
+                    <color rgba="0 0 0 0.90" />
+                </material>
+            </visual>
+        </link>
+
+        <joint name="laser_2support_base" type="continuous">
+            <parent link="laser_support"></parent>
+            <child link="laser"></child>
+            <origin xyz="0 0 ${laser_support_length / 2 + laser_length / 2}" rpy="0 0 0" />
+            <axis xyz="0 0 1" />
+        </joint>
+    </xacro:macro>
+
+    <!-- * Template: Camera -->
+    <xacro:property name="camera_height" value="0.02" />
+    <xacro:macro name="add_camera" params="x_offset">
+        <link name="camera">
+            <visual>
+                <geometry>
+                    <box size="0.03 0.01 ${camera_height}" />
+                </geometry>
+                <origin xyz="0 0 0" rpy="0 0 0" />
+                <material name="laser_support_material">
+                    <color rgba="0.3 0.9 0.3 0.9" />
+                </material>
+            </visual>
+        </link>
+
+        <joint name="camera_2base" type="fixed">
+            <parent link="base_link"></parent>
+            <child link="camera"></child>
+            <origin xyz="${base_link_radius - x_offset} 0 ${base_link_length / 2 + camera_height / 2}" rpy="0 0 ${PI / 2}" />
+        </joint>
+    </xacro:macro>
+
+    <xacro:add_wheel name="Left" LorR_flag="1" />
+    <xacro:add_wheel name="Right" LorR_flag="-1" />
+
+    <xacro:add_uni_wheel name="Forward" ForB_flag="1" />
+    <xacro:add_uni_wheel name="Back" ForB_flag="-1" />
+
+    <xacro:add_laser />
+    <xacro:add_camera x_offset="0.02"/>
+</robot>

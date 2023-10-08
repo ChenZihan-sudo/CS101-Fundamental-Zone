@@ -1,0 +1,13 @@
+<launch>
+    <!-- Load urdf file by parameter server -->
+    <param name="robot_description" command="$(find xacro)/xacro $(find urdf_rviz)/urdf/xacro/car_full_ver.xacro" />
+
+    <!-- Startup rviz -->
+    <node pkg="rviz" type="rviz" name="rviz"
+        args="-d $(find urdf_rviz)/rviz_config/car_full_ver_xacro.rviz" />
+
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" />
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" />
+    <node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui"
+        name="joint_state_publisher_gui" />
+</launch>

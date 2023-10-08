@@ -1,0 +1,12 @@
+<launch>
+    <param name="robot_description"
+        command="$(find xacro)/xacro $(find urdf_gazebo)/urdf/car_full_ver/car_full_ver.xacro" />
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find urdf_rviz)/meshes/sim_demo/box_house.world"></arg>
+    </include>
+    <node pkg="gazebo_ros" type="spawn_model" name="model"
+        args="-urdf -model car_full_ver -param robot_description" />
+
+    <node pkg="tf2_ros" type="static_transform_publisher" name="static_transform_publisher"
+        args="0 0 0 -1.57 0 -1.57 /laser_support /support_depth" />
+</launch>

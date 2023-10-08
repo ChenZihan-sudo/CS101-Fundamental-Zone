@@ -1,0 +1,10 @@
+<robot name="car_full_ver" xmlns:xacro="http://wiki.ros.org/xacro">
+    <xacro:include filename="base.xacro" />
+    <xacro:include filename="camera.xacro" />
+    <xacro:include filename="laser.xacro" />
+
+    <xacro:include filename="controller.xacro"/>
+    <xacro:include filename="laser_sim.xacro"/>
+    <xacro:include filename="camera_sim.xacro" />
+    <xacro:include filename="kinetic_sim.xacro" />
+</robot>
