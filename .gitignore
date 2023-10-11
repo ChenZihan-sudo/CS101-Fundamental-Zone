@@ -10,3 +10,4 @@ __pycache__/
 # Files
 a.out
 *executable*
+.Identifier
