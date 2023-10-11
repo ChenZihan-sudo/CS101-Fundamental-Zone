@@ -7,7 +7,6 @@
 #include "tf2_ros/buffer.h"
 #include "tf2_ros/transform_listener.h"
 
-
 int main(int argc, char* argv[])
 {
   setlocale(LC_ALL, "");
