@@ -13,7 +13,13 @@ https://www.cnblogs.com/guo-ke/p/16823745.html
 - 双亲孩子表示法					
 - 孩子兄弟表示法 (二叉链表)
 
+## 树的深度和高度
 
+https://www.cnblogs.com/jianglinliu/p/11197715.html
+
+Depth: from top to bottom
+
+Height: from bottom to top
 
 # 图
 
