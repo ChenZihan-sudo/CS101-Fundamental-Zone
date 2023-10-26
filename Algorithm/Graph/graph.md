@@ -21,6 +21,16 @@ Depth: from top to bottom
 
 Height: from bottom to top
 
+![1523448-20190716212515612-1703079491](../pics/1523448-20190716212515612-1703079491.png)
+
+## 决策树 Decision Tree
+
+https://blog.csdn.net/shuangde800/article/details/7603015
+
+### 线性时间排序
+
+任意一种比较排序算法最坏情况下，都需要做 Ω( n lg n )次的比较。
+
 # 图
 
 度(无向图)           入度, 出度(有向图) 
