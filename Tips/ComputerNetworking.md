@@ -60,7 +60,53 @@ ARP 地址解析协议 IP地址转换到物理地址(MAC)
 
 RARP 反地址解析协议 物理地址(MAC)转换到IP地址
 
+> https://zhuanlan.zhihu.com/p/145782441
 
 
-ICMP 网络控制信息协议
 
+ICMP 网络控制信息协议（IP层）
+
+
+
+
+
+IP子网划分
+
+> https://www.cnblogs.com/amonos/p/7793798.html
+>
+> https://zhuanlan.zhihu.com/p/337000554
+
+IP地址、网络号、主机号、子网掩码之间的关系
+
+1. **网络号不能全部为0或者全部为1.**
+2. **IP地址也不能全部为0或者全部为1.**
+
+> https://zhuanlan.zhihu.com/p/40201726
+
+
+
+IP地址分类
+
+网络地址+主机地址
+
+A类 255.0.0.0 
+
+B类 255.255.0.0
+
+C类 255.255.255.0
+
+D类 组播
+
+E类 实验保留
+
+
+
+NAT技术 解决IP地址短缺 
+
+Telnet 用于远程登录 TCP 23端口
+
+
+
+网关
+
+> https://zhuanlan.zhihu.com/p/165142303

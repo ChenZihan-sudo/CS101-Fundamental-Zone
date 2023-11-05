@@ -41,9 +41,6 @@ https://blog.csdn.net/qq_21438461/article/details/131170738
 如果你在一个命名空间或类内部看到这样的语法（比如`::ndm_proto_v2::Polygon`），那么这个`::`实际上是在指定从**全局作用域开始查找这个命名空间或类，而不是从当前的作用域**。这样可以避免在有命名冲突的情况下查找错误的命名空间或类。
 
 # C++ Advanced Grammers
-## 虚函数
-https://zhuanlan.zhihu.com/p/54145222
-
 # Exceptions
 ## 函数声明后跟 throw() (C++98)
 https://blog.csdn.net/to_Baidu/article/details/53763683
@@ -51,11 +48,11 @@ https://blog.csdn.net/to_Baidu/article/details/53763683
 **表示fun函数不允许抛出任何异常，即fun函数是异常安全的。**
 ```cpp
 void fun() throw();
-``` 
+```
 **表示fun函数可以抛出任何形式的异常。**
 ```cpp
 void fun() throw(...);
-``` 
+```
 **表示fun函数只能抛出exceptionType类型的异常。**
 ```cpp
 void fun() throw(exceptionType);
@@ -64,7 +61,7 @@ void fun() throw(exceptionType);
 void GetTag() throw(int); 
 // 表示抛出in，char类型异常
 void GetTag() throw(int，char);         
-``` 
+```
 
 ## 函数声明后跟 noexcept (C++11)
 https://www.cnblogs.com/RioTian/p/15115387.html
