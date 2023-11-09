@@ -1,0 +1,21 @@
+#ifndef CATCOLIA_BASELIB
+#define CATCOLIA_BASELIB
+
+#include <cstdio>
+#include <malloc/_malloc.h>
+
+namespace baselib {
+
+#define DATALEN(data, data_type) (sizeof(data) / sizeof(data_type))
+
+  template <typename T>
+  void swap(T* v1, T* v2)
+  {
+    T buf = *v1;
+    *v1 = *v2;
+    *v2 = buf;
+  }
+
+} // namespace baselib
+
+#endif
