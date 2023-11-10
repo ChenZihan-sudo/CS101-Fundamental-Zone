@@ -11,3 +11,5 @@ __pycache__/
 a.out
 *executable*
 *.Identifier
+*.npz
+*.h5
