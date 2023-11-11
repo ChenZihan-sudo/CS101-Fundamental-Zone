@@ -14,5 +14,7 @@ np.random.normal()
 
 
 
+np.expand_dims()
 
+> https://blog.csdn.net/qq_16949707/article/details/53418912
 
