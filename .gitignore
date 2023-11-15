@@ -5,6 +5,7 @@
 build/
 output/
 devel/
+checkpoints/
 __pycache__/
 
 # Files
