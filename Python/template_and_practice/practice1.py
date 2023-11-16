@@ -28,7 +28,7 @@ alist = range(1, 10)
 alist_iter = iter(alist)
 print(next(alist_iter))
 
-aiter = iter('hello')
+aiter = iter("hello")
 print(next(aiter))
 
 print(tuple([1, 2, 3]))

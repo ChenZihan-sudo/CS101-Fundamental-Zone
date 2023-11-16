@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <queue>
+#include <sys/_types/_size_t.h>
+#include <sys/_types/_ssize_t.h>
 
 class TreeNode {
 public:
@@ -17,7 +19,7 @@ int leftChildIdx(int idx) { return (idx + 1) * 2 - 1; }
 int rightChildIdx(int idx) { return (idx + 1) * 2; }
 int parentIdx(int idx) { return (idx + 1) / 2 - 1; }
 
-TreeNode* buildHeap(int* arr, size_t arr_size)
+TreeNode* buildTree(int* arr, size_t arr_size)
 {
   if (arr_size <= 0) return NULL;
 
@@ -37,8 +39,6 @@ TreeNode* buildHeap(int* arr, size_t arr_size)
   return root;
 }
 
-void heapify(TreeNode* node) { }
-
 void levelOrder(TreeNode* root)
 {
   std::queue<TreeNode*> q;
@@ -55,9 +55,78 @@ void levelOrder(TreeNode* root)
   }
 }
 
+enum SORT_TYPE
+{
+  SORT_NONE,
+  ASCENDING,
+  DECENDING
+};
+
+enum HEAP_TYPE
+{
+  HEAP_NONE,
+  MAX_HEAP,
+  MIN_HEAP,
+};
+
+void heapify(int* arr, size_t posi, size_t arr_size, int type = MAX_HEAP)
+{
+  auto lposi = leftChildIdx(posi);
+  auto rposi = rightChildIdx(posi);
+
+  auto sposi = (type == MAX_HEAP && arr[lposi] > arr[rposi]) || (type == MIN_HEAP && arr[lposi] < arr[rposi]) ? lposi : rposi;
+
+  while (sposi <= arr_size - 1) {
+    if ((type == MAX_HEAP && arr[posi] >= arr[sposi]) ||
+        (type == MIN_HEAP && arr[posi] <= arr[sposi])) break;
+
+    // printf("swap r:%d p:%d\n", arr[sposi], arr[posi]);
+    baselib::swap<int>(&arr[sposi], &arr[posi]);
+    heapify(arr, sposi, arr_size, type);
+    break;
+  }
+}
+
+void heapBuild(int* arr, size_t arr_size, int type = MAX_HEAP)
+{
+  for (ssize_t i = arr_size - 1; i > 0; i -= 2) {
+    auto pposi = parentIdx(i);
+    // printf("i:%d parent:%d val:%d\n ", i, pposi, arr[pposi]);
+    heapify(arr, pposi, arr_size, type);
+  }
+}
+
+void heapSort(int* arr, size_t arr_size, int type = ASCENDING)
+{
+  heapBuild(arr, arr_size, type == ASCENDING ? MAX_HEAP : MIN_HEAP);
+  size_t temp_idx = arr_size - 1;
+
+  while (temp_idx > 1) {
+    baselib::swap<int>(&arr[0], &arr[temp_idx]);
+    temp_idx--;
+    heapify(arr, 0, temp_idx + 1, type == ASCENDING ? MAX_HEAP : MIN_HEAP);
+  }
+}
+
 int main()
 {
-  int arr[10] = {50, 40, 45, 30, 20, 40, 35, 10, 20, 5};
-  TreeNode* root = buildHeap(arr, DATALEN(arr, int));
+  TreeNode* root = NULL;
+  int arr[11] = {1, 10, 4, 2, 5, 3, 0, 7, 6, 8, 12};
+
+  heapBuild(arr, DATALEN(arr, int), MAX_HEAP);
+  root = buildTree(arr, DATALEN(arr, int));
   levelOrder(root);
+  printf("\n");
+
+  heapSort(arr, DATALEN(arr, int), ASCENDING);
+  for (size_t i = 0; i < DATALEN(arr, int); i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
+
+  heapSort(arr, DATALEN(arr, int), DECENDING);
+  for (size_t i = 0; i < DATALEN(arr, int); i++) {
+    printf("%d ", arr[i]);
+  }
+  printf("\n");
 }
