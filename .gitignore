@@ -1,16 +1,29 @@
 # Folders
-.vscode
-.DS_Store
-.cache
 build/
 output/
 devel/
-checkpoints/
+
+# Python
 __pycache__/
 
-# Files
-a.out
-*executable*
-*.Identifier
+# Machine Learning
+checkpoints/
 *.npz
 *.h5
+
+# CMake and make
+CMakeFiles/
+cmake_install.cmake
+CMakeCache.txt
+Makefile
+
+# Files
+*.out
+*.exe
+*.exec
+*.Identifier
+
+# Others
+.vscode
+.DS_Store
+.cache
