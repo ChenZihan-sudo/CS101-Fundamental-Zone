@@ -7,6 +7,18 @@
 namespace baselib {
 
 #define DATALEN(data, data_type) (sizeof(data) / sizeof(data_type))
+#define NULL_CHECK_PTR_RET(data)   \
+  {                                \
+    if (data == NULL) return NULL; \
+  }
+#define NULL_CHECK_VOID_RET(data) \
+  {                               \
+    if (data == NULL) return;     \
+  }
+#define NULL_CHECK_CUST_RET(data, __ret__) \
+  {                                        \
+    if (data == NULL) return __ret__;      \
+  }
 
   template <typename T>
   void swap(T* v1, T* v2)
@@ -18,7 +30,7 @@ namespace baselib {
 
   template <typename T>
   int comp(T v1, T v2)
-  {    
+  {
     if (v1 < v2) return -1;
     if (v1 == v2) return 0;
     if (v1 > v2) return 1;
