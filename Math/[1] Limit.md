@@ -6,11 +6,17 @@ $f(f^{-1}(x))=x$
 
 等价无穷小（泰勒公式）
 
+$x \to 0$  
+
+A比B高阶的无穷小  $\displaystyle \lim_{x \to 0}{\frac{f(x)}{g(x)}} = 0 <=> f(x) = o(g(x))$
+
+$\color{red}{对于泰勒公式，分母只需展开到高阶无穷小的分子的阶，后续细节展开统一归并到o()} $
+
 x~sinx~tanx~arcsinx~arctanx
 
-限定条件：$$x\rightarrow0$$ 
-
 在乘除运算使用，因为其精度不够
+
+
 
 不能进行加减运算（HINT: 不建议）
 

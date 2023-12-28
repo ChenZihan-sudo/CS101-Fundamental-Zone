@@ -66,7 +66,7 @@ https://blog.csdn.net/Jackmat/article/details/128951289
 
 聚合（Aggregation）是关联关系的一种特例，它体现的是整体与部分的拥有关系，即 “has a” 的关系。此时整体与部分之间是可分离的，它们可以具有各自的生命周期，部分可以属于多个整体对象，也可以为多个整体对象共享，所以聚合关系也常称为共享关系。例如，公司部门与员工的关系，一个员工可以属于多个部门，一个部门撤消了，员工可以转到其它部门。
 
-![s1hiq589gx](./pics/s1hiq589gx.png)
+![{@Workspace}/.pic/s1hiq589gx.png](./pics/s1hiq589gx.png)
 
 ```cpp
 class Student;

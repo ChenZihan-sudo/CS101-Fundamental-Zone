@@ -92,13 +92,13 @@ $\textcolor{OrangeRed}{PV操作与前驱图}$
 
 可简化：进程运行完成，资源使用完成，所有资源和进程都变成孤立的点，没有产生死锁
 
-> https://blog.csdn.net/nima1994/article/details/65657250
+> https://blog.csdn.net/nima1994/article/details/65657250q
 
 > https://blog.csdn.net/cwxxiayi/article/details/80288850
 
 
 
-  
+38-71  
 
 死锁
 

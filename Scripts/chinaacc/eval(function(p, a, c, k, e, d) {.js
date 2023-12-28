@@ -1,0 +1,26 @@
+eval(function(p, a, c, k, e, d) {
+    e = function(c) {
+        return (c < a ? '' : e(parseInt(c / a))) + ((c = c % a) > 35 ? String.fromCharCode(c + 29) : c.toString(36))
+    }
+    ;
+    if (!''.replace(/^/, String)) {
+        while (c--) {
+            d[e(c)] = k[c] || e(c)
+        }
+        k = [function(e) {
+            return d[e]
+        }
+        ];
+        e = function() {
+            return '\\w+'
+        }
+        ;
+        c = 1
+    }
+    ;while (c--) {
+        if (k[c]) {
+            p = p.replace(new RegExp('\\b' + e(c) + '\\b','g'), k[c])
+        }
+    }
+    return p
+}('\'2y 2s\';32([\'2Y\',\'Q/e\',\'Q/19\',\'Q/2Q\',\'Q/2I\',\'Q/1I\'],6($,e,19,o,k,1I){9 7={1a:\'\',1f:\'\',1b:\'\',1h:\'\',I:0,1e:1.0,S:0,15:\'\',L:h,B:h,1w:h,K:h,2X:0,g:{z:h,t:h,14:1.0,1R:h,1S:h},N:[],1x:{2t:\'2P\',2W:\'2R\',2O:\'0\',1G:\'\',p:h},1k:\'\',Z:\'\',13:G*2k*3,1i:6(U,1J){9 12,M,1o=1J;4.m=6(){E.1L(12);1o-=1u 1K()-M;7.K="m"};4.v=6(){M=1u 1K();E.1L(12);12=E.x(U,1o);7.K="v"};4.v()},1M:6(){4.1a=e.1n().Y;4.1b=e.1H().25;4.1f=e.1n().27;4.1h=e.1n().24},1N:6(){4.1e=e.1H().2Z},11:6(){4.I=o.30();a(!4.I){9 b=4;x(6(){b.11.31(b)},1B)}4.1x.1G=4.I+\'\'},1E:6(){4.B=17(e.V().1C);4.L=17(e.V().1C)},1r:6(){7.Z=e.1m().2U;7.1k=e.1m().2V;7.15=e.1m().2F;7.1w=e.V().1t;a(!7.15){x(7.1r,1B)}},1X:6(){f e.V().2w},2o:6(1d,U){9 b=4;$.2n({1d:1d,1y:\'26\',22:6(l){7.L=17(l);7.B=17(l);U&&U()}})},M:6(){a(e.V().2r!==1){f}4.1D()},1D:6(){4.1r();4.1E();x(4.1j,G);4.1F();4.1V();4.1W()},1F:6(){4.1M();4.1N();4.11()},1V:6(){9 c=4;a(o.1z()===\'v\'){c.A()}k.n(\'w.2E\',6(){E.x(6(){c.A()},G)});k.n(\'w.2D\',6(y){c.D(y)});k.n(\'w.m\',6(y){c.D(y)});k.n(\'w.1Q\',6(y){c.D(y)});k.n(\'w.2B\',6(14){c.D();c.1e=14;c.A()})},1W:6(){9 c=4;c.13=4.1X();4.1i(c.1g,c.13);$(E).1s(\'3b 3y\',(6(){9 H=s;9 18=3v.18;a(18.3w(\'1Y\')!=-1){3x{9 1U=18.3t(/1Y\\/([\\d.]+)/)[1];9 1T=3r(1U.3z(".")[0]);a(1T>=3F){H=q}}3E(3B){H=s}}9 1A=s;f 6(){a(1P!=1Z&&1P){3H.3D("关闭、刷新页面时提交计时数据:");!1A&&c.T(H,q)}}})());k.n(\'w.3G\',6(Y){c.1a=Y;c.11();c.A()});k.n(\'3o.3a\',6(Y){c.S=o.P()});k.n(\'1O.3c 1O.38\',6(34){c.T(q,q);c.S=o.P()});k.n(\'w.1Q\',6(3e,3l){c.T(q,s,1)})},A:6(){a(7.K==\'m\'){7.v()}4.g||(4.g={});a(4.g.z){f}4.g.z=o.P();4.g.1R=4.R();4.g.14=4.1e},D:6(t){a(7.K==\'v\'){7.m()}a(!4.g){f}4.g.1S=4.R();4.g.t=t?t:o.P();a(4.g.z<4.g.t){4.N.3k(4.g)}4.g=h},1j:6(){7.B+=G;x(7.1j,G)},1g:6(){7.1i(7.1g,7.13);7.T(q,q)},T:6(H,2l,J){a(J==1Z){J=0}9 b=4;a(!b.I){f s}a(b.1b==0){f s}b.D();a(o.1z()===\'v\'){7.A()}10{7.m()}a(b.N.20<1)f s;9 p=b.16(b.N);b.N=[];9 C=b.16(b.1x);C.p=p;9 2p=b.Z;9 2q=b.1k;9 F=o.P();a(F==0){F=b.S;b.S=0}9 2i=7.Z+7.15;9 u=0;2h(9 j=0,2m=C.p.20;j<2m;j++){a(C.p[j].z!=h){u+=C.p[j].t-C.p[j].z}}a(2l&&(!b.R()||(b.R()-b.L)<8*G)){f s}a(u>(2k*5)){u=2e}9 1c=b.1a;4.2o(2i,6(){9 X=7.L;9 1t=7.1w;9 2j=1c.1v()+F.1v()+u.1v()+1t+X;9 21=3i(2j);$.2n({1d:2p+2q,3h:\'3g\',3f:H,1y:\'26\',3j:{1c:1c,27:b.1f,25:b.1b,24:b.1h,3n:21,X:X,F:F,u:u,J:J},22:6(l){a(l.2f==\'2\'){19.m();7.m();3m.3d("37").36.35="39";1u 3p({3q:2e,3C:3A,3s:q,1y:"29",33:\'系统提示\',3u:\'2K\',2C:[],2A:l.1l,2H:6(){9 O=4;$(".2G").1s(\'2b\',6(){O.2a(O);2c.2d()});$(".2z").1s(\'2b\',6(){O.2a(O);2c.2d()})}})}a(l.2f==\'3\'){19.m();7.m();28(l.1l);2u.2x=\'/2v/2J\'}},29:6(l){28(l.1l)}})})},R:6(){a(4.B)f 4.B;10 f h},16:6(r){9 1p,W=r.2T===2S?[]:{};a(23 r!==\'2g\'){f}10 a(E.1q){1p=1q.2M(r);W=1q.2L(1p)}10{2h(9 i 2N r){W[i]=23 r[i]===\'2g\'?4.16(r[i]):r[i]}}f W}};7.M();f 7});', 62, 230, '||||this||function|h5timing||var|if|_this|_th||videoModel|return|_item|null|||vEvents|result|pause|sub|stats|items|true|obj|false|pointEnd|innerTime|play|media|setTimeout|currentTime|pointStart|itemStart|_time|traceInfo|itemEnd|window|playTime|1000|isAsync|_duration|isEnded|_timingState|_openTime|start|_items|item|getCurrentTime|h5|getTime|_playTime|saveData|callback|getPlayerOpts|newobj|hs|videoRefID|_basePath|else|initDuration|setTimeoutId|_st|speed|_getSysTimeUrl|clone|parseInt|userAgent|videoCtrl|_videoRefID|_userID|videoID|url|_playSpeed|_studyID|saveInterval|_courseID|setPostTimeOut|timeInterval|_postDataUrl|retMsg|getInterfaces|getVideoInfo|remaining|str|JSON|initInterfaceUrl|on|postTimeKey|new|toString|_postTimeKey|_traceInfo|type|getMediaStatus|invokeFlag|100|serverTime|init|initOpenTime|_initData|rangeEnd|getPlayStatus|md5|delay|Date|clearTimeout|initVideoRefID|initPlaySpeed|ui|ningBoRefreshPageIsPost|ended|timeStart|timeEnd|verNum|verStr|_initEvents|_initPostEvents|getPostInterval|Chrome|undefined|length|keyMd5Str|success|typeof|courseID|userID|post|studyID|alert|error|_close|click|flashApi|playVideo|300|retCode|object|for|sysTimeUrl|keyStr|60|isTimeCheck|len|ajax|getSysTime|basePath|postDataUrl|isSaveTime|strict|refType|location|sys|postInterval|href|use|popClose|tanContent|ratechange|btnContent|waiting|playing|getServerTimeUrl|sure|_Events|h5EventApi|logOut|custom|parse|stringify|in|rangeStart|video|h5StatApi|pch5hls|Array|constructor|BASE_PATH|POST_TIMING_DATA_URL|source|_timePointCache|jquery|playSpeed|getDuration|call|define|title|id|display|style|videoPointBg|nextMedia|block|autoNext|beforeunload|preMedia|getElementById|duration|async|json|dataType|hex_md5|data|push|hasNext|document|key|inner|Popup|width|Number|autoScroll|match|subBtnType|navigator|indexOf|try|unload|split|220|err|height|log|catch|79|mediachange|console'.split('|'), 0, {}))
