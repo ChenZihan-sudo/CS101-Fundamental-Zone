@@ -14,6 +14,10 @@
 
 ---
 
+**ALOHA**
+
+`独占信道`  `碰撞等待重发`  `等待时间随机`
+
 ##### 时隙ALOHA
 
 N个节点，传输概率为P，传输效率：$Np(1-p)^{N-1}$
@@ -23,6 +27,8 @@ $N->\infty,\ 最大效率\ \frac{1}{e} = 0.37$
 
 
 ##### 纯ALOHA
+
+$Np(1-p)^{2(N-1)}$
 
 传输效率比时隙ALOHA慢2倍
 
@@ -87,6 +93,8 @@ returns to *监听信道状态*
 
 #### Mac Address(LAN Address, Physical Address)
 
+`MAC` Medium access control
+
 - 链路层地址
 - 6bytes 48bit XX-XX-XX-XX-XX-XX
 - 唯一地址，24bit(厂商代码) - 24bit(网卡序列号)
@@ -137,3 +145,6 @@ IP node: host, router
 ### Switches vs. routers (交换机vs路由器)
 
 ![image-20231220211305955](/Users/catcolia/Library/Application Support/typora-user-images/image-20231220211305955.png)
+
+
+
